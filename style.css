@@ -40,7 +40,7 @@ body {
 
 .right-column {
     flex: 2; /* Takes 2 parts of the available space */
-    padding: 40px; /* Increased padding for more white space */
+    padding: 20px 40px 40px 40px; /* Reduced top padding */
     background: #fff; /* Clean white background */
     display: flex;
     flex-direction: column;
@@ -49,19 +49,20 @@ body {
 header {
     background: none; /* No background */
     color: #333; /* Dark text */
-    padding: 0 0 20px 0; /* Adjusted padding */
+    padding: 0 0 10px 0; /* Adjusted bottom padding for less space */
     text-align: left; /* Align header text to left */
-    border-bottom: 1px solid #eee; /* Subtle separator */
+    border-bottom: 1px solid #eee; /* Restored subtle separator */
 }
 
 header h1 {
-    margin: 0;
+    margin: 0 0 5px 0; /* Reduced bottom margin */
     font-size: 2.5em; /* Larger, impactful heading */
     font-weight: 700; /* Bold */
     letter-spacing: -1px; /* Tighten letter spacing */
 }
 
 header p {
+    margin: 0; /* Remove default margins */
     font-size: 1.2em;
     font-weight: 300; /* Lighter weight */
     color: #666;
@@ -75,7 +76,7 @@ main {
     height: calc(100% - 160px); /* Adjusted height based on new header/footer padding */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute sections vertically */
+    /* Removed justify-content: space-between; for more consistent spacing via margins */
 }
 
 section {
@@ -88,6 +89,10 @@ section:last-of-type {
     border-bottom: none;
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+section#education {
+    display: none; /* Hide the Education section */
 }
 
 h2 {
