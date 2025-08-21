@@ -29,16 +29,13 @@ body {
 .left-column {
     flex: 1; /* Takes 1 part of the available space */
     background: #000; /* Solid black background for a strong contrast */
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden; /* Hide overflow for the image */
 }
 
 .profile-picture {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* Cover ensures the image fills the space */
+    width: 100%; /* Make image fill 100% width of its container */
+    height: 100%; /* Make image fill 100% height of its container */
+    object-fit: cover; /* Ensures the image fills the space, cropping as needed */
 }
 
 .right-column {
