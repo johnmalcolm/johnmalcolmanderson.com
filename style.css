@@ -1,0 +1,147 @@
+/* Basic Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Swiss-inspired font */
+    line-height: 1.5;
+    color: #333;
+    background: #fff; /* Clean white background */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Take full viewport height */
+}
+
+.left-column {
+    flex: 1; /* Takes 1 part of the available space */
+    background: #000; /* Solid black background for a strong contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow for the image */
+}
+
+.profile-picture {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Cover ensures the image fills the space */
+}
+
+.right-column {
+    flex: 2; /* Takes 2 parts of the available space */
+    padding: 40px; /* Increased padding for more white space */
+    background: #fff; /* Clean white background */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: none; /* No background */
+    color: #333; /* Dark text */
+    padding: 0 0 20px 0; /* Adjusted padding */
+    text-align: left; /* Align header text to left */
+    border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Larger, impactful heading */
+    font-weight: 700; /* Bold */
+    letter-spacing: -1px; /* Tighten letter spacing */
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300; /* Lighter weight */
+    color: #666;
+}
+
+main {
+    padding: 20px 0; /* Adjusted padding */
+    margin: 0; /* Remove auto margin */
+    box-shadow: none; /* Remove box shadow */
+    overflow: hidden;
+    height: calc(100% - 160px); /* Adjusted height based on new header/footer padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute sections vertically */
+}
+
+section {
+    margin-bottom: 20px; /* Adjusted margin for better spacing */
+    padding-bottom: 20px; /* Adjusted padding */
+    border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8em; /* Slightly larger headings */
+    font-weight: 600; /* Semi-bold */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+    padding-left: 1.2em; /* Space for bullet */
+    position: relative;
+}
+
+ul li::before {
+    content: '\2022'; /* Bullet point */
+    color: #333;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.2em;
+    position: absolute;
+    left: 0;
+}
+
+footer {
+    text-align: left; /* Align footer text to left */
+    padding: 20px 0 0 0; /* Adjusted padding */
+    background: none; /* No background */
+    color: #666; /* Lighter text color */
+    margin-top: auto;
+    border-top: 1px solid #eee; /* Subtle separator */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
