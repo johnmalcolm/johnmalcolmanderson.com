@@ -114,9 +114,14 @@ ul {
 }
 
 ul li {
-    margin-bottom: 5px;
-    padding-left: 1.2em; /* Space for bullet */
     position: relative;
+    width: max-content;
+    color: #333333;
+    margin-bottom: 8px;
+    position: relative;
+    border-radius: 20px;
+    padding: 3px 9px;
+    border: 1px solid #323232;
 }
 
 ul li::before {
