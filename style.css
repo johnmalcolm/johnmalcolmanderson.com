@@ -95,6 +95,11 @@ section#education {
     display: none; /* Hide the Education section */
 }
 
+section#contact p {
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
 h2 {
     color: #333;
     font-size: 1.8em; /* Slightly larger headings */
