@@ -18,7 +18,7 @@ body {
     color: #333;
     background: #fdf6e3; /* Butter color background */
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto; /* Allow vertical scrolling on the body */
 }
 
 .container {
@@ -72,8 +72,6 @@ main {
     padding: 20px 0; /* Adjusted padding */
     margin: 0; /* Remove auto margin */
     box-shadow: none; /* Remove box shadow */
-    overflow: hidden;
-    height: calc(100% - 160px); /* Adjusted height based on new header/footer padding */
     display: flex;
     flex-direction: column;
     /* Removed justify-content: space-between; for more consistent spacing via margins */
@@ -113,31 +111,20 @@ p {
 }
 
 ul {
-    list-style: none;
+    list-style: none; /* Ensure no default bullet points */
     padding: 0;
     margin: 0;
 }
 
 ul li {
+    /* Removed specific list item styling as it's no longer needed for bullet points */
     position: relative;
     width: max-content;
     color: #333333;
     margin-bottom: 8px;
-    position: relative;
     border-radius: 20px;
     padding: 3px 9px;
     border: 1px solid #323232;
-}
-
-ul li::before {
-    content: '\2022'; /* Bullet point */
-    color: #333;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1.2em;
-    position: absolute;
-    left: 0;
 }
 
 footer {
@@ -164,17 +151,19 @@ a:hover {
 
 .download-cv {
     background-color: transparent;
-    border: 1px solid #ccc;
+    border: 0.5px solid #ddd; /* Even thinner border */
     color: #333;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 0.8em;
+    padding: 1px 4px; /* Further reduced padding */
+    border-radius: 2px;
+    font-size: 0.7em; /* Even smaller font size */
+    font-weight: normal; /* Normal font weight */
     transition: background-color 0.3s ease; /* Smooth transition for background color */
-    display: none; /* Hide the CV link */
+    display: block; /* Make the CV link visible */
+    display: none;
 }
 
 .download-cv:hover {
-    background-color: #eee; /* Light grey background on hover */
+    background-color: #f0f0f0; /* Slightly lighter grey background on hover */
 }
 
 .download-cv a {
@@ -184,4 +173,93 @@ a:hover {
 
 .download-cv a:hover {
     text-decoration: none; /* No underline on hover for the CV link */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .left-column {
+        flex: none; /* Remove flex sizing */
+        width: 100%; /* Take full width */
+        height: 40vh; /* Set a vertical height for the image container */
+    }
+
+    .profile-picture {
+        height: 100%; /* Make image fill 100% height of its container */
+        object-fit: cover; /* Ensures the image fills the space, cropping as needed */
+        object-position: 50% 30%; /* Focus on the second third, a bit higher */
+    }
+
+    .right-column {
+        flex: none; /* Remove flex sizing */
+        width: 100%; /* Take full width */
+        padding: 20px; /* Adjust padding for mobile */
+        height: auto; /* Allow content to dictate height */
+    }
+
+    main {
+        overflow-y: auto; /* Enable vertical scrolling for main content */
+        height: auto; /* Allow main to take necessary height */
+        flex-grow: 1; /* Allow main to grow and shrink */
+    }
+
+    header h1 {
+        font-size: 2em; /* Adjusted heading size for mobile */
+        margin-bottom: 0; /* Reduced space below heading */
+    }
+
+    header p {
+        font-size: 1.1em; /* Adjusted subheading size for tablets */
+    }
+
+    h2 {
+        font-size: 1.8em; /* Adjusted section heading size for tablets */
+    }
+
+    p {
+        font-size: 1em; /* Adjusted paragraph size for tablets */
+    }
+
+    .download-cv {
+        position: static; /* Remove fixed positioning */
+        margin-top: 20px; /* Add some space above */
+        width: fit-content; /* Adjust width to content */
+    }
+
+    footer {
+        flex-direction: row; /* Align footer items horizontally */
+        text-align: left; /* Align footer content to left */
+        padding: 10px 20px; /* Adjust padding for mobile */
+        justify-content: space-between; /* Space out items */
+        align-items: center; /* Vertically align items */
+    }
+
+    footer p {
+        margin-bottom: 10px; /* Add space between copyright and CV link */
+    }
+}
+
+@media (max-width: 414px) { /* Targeting smaller mobile devices like iPhone SE */
+    header h1 {
+        font-size: 1.7em; /* Slightly larger heading size for very small screens */
+    }
+
+    header p {
+        font-size: 1em; /* Slightly larger subheading size for very small screens */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Slightly larger section headings for very small screens */
+    }
+
+    .right-column {
+        padding: 15px; /* Further reduce padding for very small screens */
+    }
+
+    footer {
+        padding: 10px 15px; /* Adjust footer padding for very small screens */
+    }
 }
