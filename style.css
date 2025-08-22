@@ -55,7 +55,7 @@ header {
 }
 
 header h1 {
-    margin: 0 0 5px 0; /* Reduced bottom margin */
+    margin: 0 0 0 0; /* Reduced bottom margin */
     font-size: 2.5em; /* Larger, impactful heading */
     font-weight: 700; /* Bold */
     letter-spacing: -1px; /* Tighten letter spacing */
@@ -96,6 +96,72 @@ section#education {
 section#contact p {
     line-height: 1.2;
     margin-bottom: 0;
+}
+
+section#partners {
+    text-align: left; /* Align heading to the left */
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+section#partners h2 {
+    font-size: 1.5em; /* Smaller font size for the heading */
+    margin-bottom: 15px; /* Adjust spacing below the heading */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start; /* Align logos to the left */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px; /* Increased spacing between logos */
+    margin-top: 20px;
+}
+
+.greyscale-logo {
+    max-height: 50px; /* Reverted maximum height for logos */
+    width: auto;
+    max-width: 120px; /* Reverted maximum width for logos */
+    object-fit: contain;
+    filter: grayscale(100%) brightness(100%); /* Adjusted brightness to make it darker */
+    opacity: 0.7; /* Adjusted opacity to make it darker */
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.greyscale-logo:hover {
+    filter: grayscale(0%) brightness(100%); /* Remove greyscale and restore brightness on hover */
+    opacity: 1;
+}
+
+/* Removed specific SVG path fill override as filter should handle it */
+
+/* Adjust specific logo default appearances */
+.atu-logo img.greyscale-logo {
+    opacity: 0.8; /* Make ATU logo darker */
+    filter: grayscale(100%) brightness(80%); /* Further darken ATU logo */
+}
+
+.aalto-logo img.greyscale-logo {
+    opacity: 0.5; /* Make Aalto logo less dark */
+    filter: grayscale(100%) brightness(120%); /* Further lighten Aalto logo */
+}
+
+.yahoo-logo img.greyscale-logo {
+    opacity: 0.7; /* Adjusted opacity to make Yahoo logo darker */
+    filter: grayscale(100%) brightness(90%); /* Adjusted brightness to make Yahoo logo darker */
+}
+
+/* Ensure specific logo hover states also revert */
+.atu-logo:hover img.greyscale-logo,
+.aalto-logo:hover img.greyscale-logo,
+.yahoo-logo:hover img.greyscale-logo {
+    filter: grayscale(0%) brightness(100%);
+    opacity: 1;
+}
+
+.netlight-logo {
+    position: relative;
+    top: 4px;
 }
 
 h2 {
@@ -244,15 +310,15 @@ a:hover {
 
 @media (max-width: 414px) { /* Targeting smaller mobile devices like iPhone SE */
     header h1 {
-        font-size: 1.7em; /* Slightly larger heading size for very small screens */
+        font-size: 1.8em; /* Slightly larger heading size for very small screens */
     }
 
     header p {
-        font-size: 1em; /* Slightly larger subheading size for very small screens */
+        font-size: 1.1em; /* Slightly larger subheading size for very small screens */
     }
 
     h2 {
-        font-size: 1.5em; /* Slightly larger section headings for very small screens */
+        font-size: 1.6em; /* Slightly larger section headings for very small screens */
     }
 
     .right-column {
