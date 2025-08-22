@@ -40,7 +40,7 @@ body {
 
 .right-column {
     flex: 2; /* Takes 2 parts of the available space */
-    padding: 20px 40px 40px 40px; /* Reduced top padding */
+    padding: 20px 40px 20px 40px; /* Reduced bottom padding */
     background: #fdf6e3; /* Match right column background to butter color */
     display: flex;
     flex-direction: column;
@@ -142,11 +142,15 @@ ul li::before {
 
 footer {
     text-align: left; /* Align footer text to left */
-    padding: 20px 0 0 0; /* Adjusted padding */
+    padding: 10px 0; /* Adjusted padding */
     background: none; /* No background */
     color: #666; /* Lighter text color */
     margin-top: auto;
+    margin-bottom: 0; /* Remove bottom margin */
     border-top: 1px solid #eee; /* Subtle separator */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 a {
@@ -156,4 +160,28 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.download-cv {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    display: none; /* Hide the CV link */
+}
+
+.download-cv:hover {
+    background-color: #eee; /* Light grey background on hover */
+}
+
+.download-cv a {
+    color: #333;
+    text-decoration: none;
+}
+
+.download-cv a:hover {
+    text-decoration: none; /* No underline on hover for the CV link */
 }
